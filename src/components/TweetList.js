@@ -1,19 +1,21 @@
 import React from "react";
 import TweetItem from "./TweetItem";
 
-function TweetList(props) {
+function TweetList({ user }) {
   return (
     <div className="ui segment">
       <div className="ui feed">
-        {props.user.tweets.map((tweet) => (
+        {user.tweets.map((tweet) => {
+          return (
           <TweetItem
             key={tweet.id}
-            handleTweetLike={props.handleTweetLike}
-            handle={props.user.handle}
-            photo={props.user.photo}
+            // handleTweetLike={handleTweetLike}
+            // handle={tweet.handle}
+            photo={user.photo}
             tweet={tweet}
           />
-        ))}
+          )
+        })}
       </div>
     </div>
   );
